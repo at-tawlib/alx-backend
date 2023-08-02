@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """
-Use user locale
+Infer appropriate time zone
 """
 from flask import Flask, render_template, request, g
 from flask_babel import Babel
+from pytz import timezone
+import pytz.exceptions
 
 
 users = {
@@ -64,10 +66,24 @@ def get_locale():
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
+@babel.timezoneselector
+def get_timezone():
+    """get the timezone"""
+    time_zone = request.args.get('timezone', None)
+    if time_zone:
+        try:
+            return timezone(time_zone).zone
+        except pytz.exceptions.UnknownTimeZoneError:
+            pass
+
+    default_timezone = app.config['BABEL_DEFAULT_TIMEZONE']
+    return default_timezone
+
+
 @app.route("/")
 def index():
-    """render 5-index.html"""
-    return render_template('5-index.html')
+    """render 7-index.html"""
+    return render_template('7-index.html')
 
 
 if __name__ == "__main__":
