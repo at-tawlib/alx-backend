@@ -43,6 +43,7 @@ Then edit files  `translations/[en|fr]/LC_MESSAGES/messages.po`  to provide the 
 |--|--|--|
 | `home_title` | `"Welcome to Holberton"` | `"Bienvenue chez Holberton"` |
 |`home_header`| `"Hello world!"` | `"Bonjour monde!"` |
+
 Then compile your dictionaries with
 
 ```
@@ -58,7 +59,9 @@ In your  `get_locale`  function, detect if the incoming request contains  `local
 
 Now you should be able to test different translations by visiting  `http://127.0.0.1:5000?locale=[fr|en]`.
 
-**Visiting  `http://127.0.0.1:5000/?locale=fr`  should display this level 1 heading:**  ![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/3/f958f4a1529b535027ce.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230801T211224Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=ba77887eeef18059aa13c37d0e4bfa7a5f311a3481c7a572475cafe7747f405f)
+**Visiting  `http://127.0.0.1:5000/?locale=fr`  should display this level 1 heading:** 
+
+## Bonjour monde!
 
 
 ### 5. Mock logging in
@@ -79,12 +82,16 @@ In your HTML template, if a user is logged in, in a paragraph tag, display a wel
 | `logged_in_as` | `"You are logged in as %(username)s."` | `"Vous êtes connecté en tant que %(username)s."` |
 | `not_logged_in` | `"You are not logged in."` | `"Vous n'êtes pas connecté."` |
 |  |  |  |
+
 **Visiting  `http://127.0.0.1:5000/`  in your browser should display this:**
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/3/2c5b2c8190f88c6b4668.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230801T211224Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=2be6933840f0c62ebe032249c1ac5363a25141a4d14b97d56894e522bc1b201f)
+## Hello world!
+You are not logged in.
 
-**Visiting  `http://127.0.0.1:5000/?login_as=2`  in your browser should display this:**  ![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/3/277f24308c856a09908c.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230801T211224Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=09e3a1aa6393bb84a5147d9729affae51caadee48d22c2d2b35c11d50fba014e)
+**Visiting  `http://127.0.0.1:5000/?login_as=2`  in your browser should display this:**  
 
+## Hello world!
+You are logged in as Beyonce.
 
 ### 6. Use user locale
 #### Files:  [6-app.py](6-app.py) ,  [babel.cfg](babel.cfg)  ,   [templates/6-index.html](templates/6-index.html) 
@@ -99,7 +106,8 @@ The order of priority should be
 
 Test by logging in as different users
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/3/9941b480b0b9d87dc5de.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230801%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230801T211224Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=dd7fd09126cb71e2b74b5fe2873505de54ac2b110f7f3b98de6b1b2d4c802d09)
+## Bonjour monde!
+Vous etes connecte en tant que Spock.
 
 ### 7. Infer appropriate time zone
 #### Files:  [7-app.py](7-app.py),  [templates/7-index.html](templates/7-index.html)
@@ -123,12 +131,21 @@ Use the following translations
 |--|--|--|
 | `current_time_is` | `"The current time is %(current_time)s."` |  `"Nous sommes le %(current_time)s."`|
 
+
 **Displaying the time in French looks like this:**
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/3/bba4805d6dca0a46a0f6.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230804%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230804T115534Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=e130cff71272ff91977e63a83b1b147769d2fc5b7fc69831f9770c215e3e7fca)
+## Bonjour monde!
+Vous etes connecte en tant que Spock.
+
+Nous somme le 19 mars 2020 a 18:20:26.
 
 **Displaying the time in English looks like this:**
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/3/54f3be802024dbcf06f4.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230804%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230804T115534Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=39e2436994fa3c0d461f2bc7341fee826327d99265650194ca234220b14b580b)
+## Hello world!
+You are logged in as Spock.
+
+The current time is Mar 19, 2020, 6:20:24 PM.
+
+
 
 > Written with [StackEdit](https://stackedit.io/).
